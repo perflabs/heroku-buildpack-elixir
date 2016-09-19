@@ -51,7 +51,7 @@ function load_config() {
 function export_config_vars() {
   for config_var in ${config_vars_to_export[@]}; do
     if [ -d $env_path ] && [ -f $env_path/${config_var} ]; then
-      export ${config_var}=\'$(cat $env_path/${config_var})\'
+      export ${config_var}="$(cat $env_path/${config_var})"
     fi
   done
 }
